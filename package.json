@@ -28,6 +28,7 @@
     "less": "^2.7.3",
     "ng-zorro-antd": "^1.7.0",
     "rxjs": "^6.0.0",
+    "sanitize.css": "^8.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
