@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
 
   checkError(response) {
     console.warn(`error code: ${response.error.code}`);
+    this.notification.error('Erro', response.error.message);
 
     // check for username field error
     if (response.error.fields && response.error.fields.username) {
@@ -70,7 +71,5 @@ export class LoginComponent implements OnInit {
         this.notification.error('Senha', element);
       });
     }
-
-    this.notification.error('Erro', response.error.message);
   }
 }

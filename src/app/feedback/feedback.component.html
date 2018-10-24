@@ -1,3 +1,54 @@
-<p>
-  feedback works!
-</p>
+<div class="container">
+    <div class="content">
+      <div class="header">
+        <button nz-button nzType="primary" [routerLink]="['/']" class="btn-back">
+          <fa-icon icon="angle-left"></fa-icon>
+        </button>
+        <h2>Feedback</h2>
+      </div>
+
+      <div class="message">
+        <fa-icon icon="comment-dots" class="icon-message"></fa-icon>
+        <p class="text-message">
+          Deixe suas criíticas e sugestões! Assim podemos melhorar o nosso conteúdo.
+        </p>
+      </div>
+
+      <div class="form">
+        <form nz-form [formGroup]="feedbackForm" (ngSubmit)="submitFeedbackForm()">
+          <nz-form-item>
+            <nz-form-control>
+              <input type="text" nz-input formControlName="name" placeholder="Usuário">
+              <nz-form-explain *ngIf="name.dirty && name.errors" class="invalid">
+                O nome é obrigatório! Mínimo 3 caracteres.
+              </nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control>
+              <input type="text" nz-input formControlName="email" placeholder="E-mail">
+              <nz-form-explain *ngIf="email.dirty && email.errors" class="invalid">
+                E-mail é obrigatório e deve ser válido.
+              </nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control>
+              <textarea nz-input formControlName="message" placeholder="Escreva seu comentário..." cols="30" rows="10"></textarea>
+              <nz-form-explain *ngIf="message.dirty && message.errors" class="invalid">
+                A mensagem é obrigatória e deve conter no mínimo 10 caracteres.
+              </nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control>
+              <button nz-button class="login-button" [nzType]="'primary'">Enviar</button>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
+    </div>
+  </div>

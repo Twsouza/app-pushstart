@@ -1,0 +1,74 @@
+$border-radius: 3px;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto 0;
+  min-width: 100%;
+  min-height: 100%;
+
+  .content {
+    border-radius: $border-radius;
+    min-height: 500px;
+    min-width: 350px;
+    width: 25%;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #714fa7;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      min-height: 4em;
+      position: relative;
+
+      .btn-back {
+        font-size: 2em;
+        left: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
+
+      h2 {
+        color: #fff!important;
+        margin: .5em 0;
+      }
+    }
+
+    .message {
+      background: #5eb891;
+      display: flex;
+      line-height: 1.1;
+      padding: 2em 0;
+
+      .text-message {
+        color: #fff;
+        font-size: 1.15em;
+        font-weight: 500;
+        margin: 0;
+        margin-right: 1em;
+        text-align: justify;
+      }
+
+      .icon-message {
+        color: #fff;
+        font-size: 3em;
+        padding: 0 0.7em;
+      }
+    }
+
+    .form {
+      padding: 1em .5em;
+
+      .login-button {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
