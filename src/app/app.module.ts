@@ -1,20 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import zh from '@angular/common/locales/zh';
-import { LoginComponent } from './login/login.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { TimelineComponent } from './timeline/timeline.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { en_US, NgZorroAntdModule, NZ_I18N } from 'ng-zorro-antd';
+
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { LoginComponent } from './login/login.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 registerLocaleData(zh);
+library.add(fas, far);
 
 @NgModule({
   declarations: [
@@ -30,7 +35,9 @@ registerLocaleData(zh);
     FormsModule,
     HttpClientModule,
     NgZorroAntdModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
