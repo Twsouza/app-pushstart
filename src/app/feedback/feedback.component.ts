@@ -1,7 +1,7 @@
 import { NzNotificationService } from 'ng-zorro-antd';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../service/api.service';
+import { ApiService } from '../services/api.service';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 @Component({

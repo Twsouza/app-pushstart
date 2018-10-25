@@ -1,0 +1,14 @@
+<div class="post">
+  <app-post-header [post]="post"></app-post-header>
+
+  <ng-container [ngSwitch]="post.type">
+    <app-post-banner *ngSwitchCase="'banner'" [data]="post.data"></app-post-banner>
+    <div *ngSwitchCase="'video'">video</div>
+    <app-post-image *ngSwitchDefault [data]="post.data"></app-post-image>
+  </ng-container>
+
+  <div class="likes">
+    likes
+  </div>
+  <!-- {{ post | json }} -->
+</div>

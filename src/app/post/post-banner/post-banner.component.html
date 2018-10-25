@@ -1,0 +1,42 @@
+<ng-container *ngIf="!data.options;else poll">
+  <div class="banner">
+    {{ data.text }}
+  </div>
+</ng-container>
+
+<ng-template #poll>
+  <p>{{ data.text }}</p>
+
+  <form nz-form [formGroup]="pollForm" (ngSubmit)="submitPollForm()" *ngIf="!showPoll">
+    <nz-form-item>
+      <nz-form-control>
+        <nz-radio-group formControlName="option" [nzSize]="'large'" class="opt-group">
+          <label nz-radio-button class="opt-poll"
+            *ngFor="let opt of data.options" nzValue="{{ opt.value }}"
+            [nzDisabled]="option.value != '' && option.value != opt.value"
+            [class.checked]="option.value == opt.value">
+            {{ opt.value }}
+          </label>
+        </nz-radio-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button [nzType]="'default'" [disabled]="pollForm.invalid" class="btn-vote">Votar</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+  <div class="result-poll" *ngIf="showPoll">
+    <div class="option" *ngFor="let opt of data.options">
+      <div class="percent"
+        [class.selected]="opt.value == option.value"
+        [ngStyle]="{'width': getPercent(opt.votes) +'%'}">
+        {{ opt.value }}
+      </div>
+      <div class="text-percent">
+        {{ getPercent(opt.votes) | number:'2.1-2' }}% <small> - {{ opt.votes }} votos </small>
+      </div>
+    </div>
+  </div>
+</ng-template>

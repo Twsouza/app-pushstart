@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ApiService {
-  url = 'https://teste.pushstart.com.br/api/';
+  url = 'https://teste.pushstart.com.br/api';
 
   constructor(
     private http: HttpClient,
@@ -21,7 +21,7 @@ export class ApiService {
 
   // send a request to and, if successed, it'll return a token
   login(username: string, password: string) {
-    return this.http.post(`${this.url}login`, {username: username, password: password});
+    return this.http.post(`${this.url}/login`, {username: username, password: password});
   }
 
   // authenticate user, save the token in the session
@@ -35,10 +35,16 @@ export class ApiService {
   }
 
   feedback(name: string, email: string, message: string) {
-    return this.http.post(`${this.url}feedback`, {
+    return this.http.post(`${this.url}/feedback`, {
       name: name,
       email: email,
       message: message
     });
+  }
+
+  getPosts() {
+    return this.http.get(`${this.url}/timeline`, { headers: {
+      'X-Authorization': this.user
+    }});
   }
 }

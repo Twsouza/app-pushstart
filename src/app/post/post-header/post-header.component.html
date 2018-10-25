@@ -1,0 +1,10 @@
+<div class="header">
+  <div class="avatar" [ngStyle]="{'background-image': 'url( ' + post.author.avatar + ' )'}">
+  </div>
+  <h3 class="username">
+    {{ post.author.name }}
+  </h3>
+  <div class="created">
+    {{ createdAt | date:'medium':'UTC-3':'pt' }}
+  </div>
+</div>

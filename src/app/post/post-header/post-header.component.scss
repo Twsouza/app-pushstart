@@ -1,0 +1,32 @@
+.header {
+  display: grid;
+  grid-gap: 0 1em;
+  grid-template-areas:
+  'avatar username'
+  'avatar created';
+  grid-template-columns: repeat(12, 1fr);
+
+  .avatar {
+    grid-area: avatar;
+    grid-column: 1/ span 2;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    height: 5em;
+  }
+  .username {
+    grid-area: username;
+    grid-column: 3/ span 10;
+
+    font-size: 1.35em;
+    font-weight: 600;
+    margin: 0;
+  }
+  .created {
+    grid-area: created;
+    grid-column: 3/ span 10;
+    color: #9e9fa3;
+  }
+}

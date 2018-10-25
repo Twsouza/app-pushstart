@@ -1,0 +1,56 @@
+$primary: #4b3172;
+.banner {
+  background-image: radial-gradient(circle, #e5bacb, #b44da2, $primary);
+  color: #fff;
+  font-size: 3.25em;
+  font-weight: bold;
+  line-height: 1;
+  margin: .3em 0;
+  padding: 1.3em .7em;
+  text-align: center;
+}
+
+form {
+  .opt-group, .opt-poll {
+    display: block;
+    width: 100%;
+  }
+  .opt-poll {
+    border: 1px $primary solid!important;
+    border-radius: 5px;
+    color: $primary;
+    margin: .5em 0;
+
+    &.checked {
+      background-color: $primary;
+      color: #fff;
+    }
+  }
+  .btn-vote {
+    display: block;
+    width: 100%;
+  }
+}
+
+.option {
+  padding: .5em 0;
+  text-indent: 5px;
+  width: 100%;
+
+  .percent {
+    border-radius: 5px;
+    color: #fff;
+    font-size: 2.25em;
+    font-weight: bold;
+    background-color: #cecece;
+    text-shadow:
+    -1px -1px 0 $primary,
+    1px -1px 0 $primary,
+    -1px 1px 0 $primary,
+    1px 1px 0 $primary;
+
+    &.selected {
+      background-color: $primary;
+    }
+  }
+}

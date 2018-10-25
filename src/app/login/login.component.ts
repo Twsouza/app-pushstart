@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzNotificationService } from 'ng-zorro-antd';
 
-import { ApiService } from './../service/api.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-login',
