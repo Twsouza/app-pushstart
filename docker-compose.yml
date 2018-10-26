@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  pushstart:
+    build: .
+    image: pushstart
+    ports:
+      - "80:80"

@@ -1,27 +1,29 @@
-# AppPushstart
+# DesafioZap
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+## Informações
 
-## Development server
+Esse projeto utiliza o Angular com a biblioteca [Ant Design](https://ng.ant.design/docs/introduce/en), uma UI library desevolvida de acordo com as especificações da comunidade Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instalação
 
-## Code scaffolding
+Abra um terminal nesse diretório e então instale todas dependências  com `npm install`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Rodar localmente, servidor de desenvolvimento
+
+Utilize o servidor embutido do Angular para rodar localmente em desenvolvimento. Rode `ng serve` e navegue em `http://localhost:4200/`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+É necessário que tenha o **npm** e o Angular [previamente instalado](https://angular.io/guide/quickstart).
 
-## Running unit tests
+Para rodar em produção, rode o comando `ng build --prod --aot --build-optimizer --optimization`. Após terminar o processo, será criado uma nova pasta `dist/`. A partir de agora você tem duas escolhas:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Utilizar algum servidor para hospedar os arquivos e direcionar todas as requisições para o index, veja o `default.conf` como exemplo.
 
-## Running end-to-end tests
+2. Em um server com [**docker** instalado](https://www.docker.com/get-started) execute o comando `docker-compose up -d --build` , em um terminal nessa pasta, que você tem um servidor rodando com tudo configurado. O Resultado é uma imagem com apenas **~20MB**.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# How It Works
 
-## Further help
+A timeline somente pode ser acessada por usuário logada. A tela de feedback e a de erro são de livre acesso. Após logar o usuário é direcionado para a timeline, onde será carregado todos os posts.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+O *timeline component* solicita que a *api service* pegue os posts por uma requisição *GET* no endpoint, se houver erro, o usuário será redirecionado para a tela de erro. Após carregado a lista, o *timeline component* carrega o header do post, *post-header*, que contém o cabeçalho do post. Depois é verificado o tipo do post e "incorporado" o *post-banner*, *post-image* ou *post-video*. Para facilitar a organização dos posts, foi criado o **PostModule** que contém todos arquivos necessários para exibir um post.
