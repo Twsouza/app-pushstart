@@ -11,6 +11,9 @@ export class PostComponent {
   liked = false;
 
   likePost(post) {
+    // like only once
+    if (this.liked) { return; }
+
     this.liked = true;
     this.likedEvent.emit(post);
   }

@@ -12,6 +12,7 @@ import { NZ_I18N, pt_BR } from 'ng-zorro-antd';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ButtonFeedbackComponent } from './button-feedback/button-feedback.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { LoginComponent } from './login/login.component';
@@ -28,6 +29,7 @@ library.add(fas, far);
     FeedbackComponent,
     TimelineComponent,
     ErrorPageComponent,
+    ButtonFeedbackComponent,
   ],
   imports: [
     BrowserModule,
