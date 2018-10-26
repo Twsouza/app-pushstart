@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class TimelineComponent implements OnInit {
   posts;
+  grid = false;
 
   constructor(
     private api: ApiService,
@@ -36,5 +37,9 @@ export class TimelineComponent implements OnInit {
     }
 
     likedEvent.likes++;
+  }
+
+  showGrid() {
+    this.grid = !this.grid;
   }
 }
