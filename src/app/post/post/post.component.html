@@ -3,12 +3,19 @@
 
   <ng-container [ngSwitch]="post.type">
     <app-post-banner *ngSwitchCase="'banner'" [data]="post.data"></app-post-banner>
-    <div *ngSwitchCase="'video'">video</div>
+    <app-post-video *ngSwitchCase="'video'" [data]="post.data"></app-post-video>
     <app-post-image *ngSwitchDefault [data]="post.data"></app-post-image>
   </ng-container>
 
-  <div class="likes">
-    likes
+  <div class="likes" (click)="likePost(post)">
+    <fa-icon [icon]="['fas', 'heart']" class="icon" *ngIf="liked;else notLiked"></fa-icon>
+    <ng-template #notLiked>
+      <fa-icon [icon]="['far', 'heart']" class="icon" ></fa-icon>
+    </ng-template>
+
+    <span class="text">
+      {{ post.likes }}
+    </span>
   </div>
   <!-- {{ post | json }} -->
 </div>

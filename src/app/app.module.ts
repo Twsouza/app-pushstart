@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -36,7 +35,6 @@ library.add(fas, far);
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    FontAwesomeModule,
     PostModule
   ],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }],

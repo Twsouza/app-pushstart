@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -7,4 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class PostComponent {
   @Input('post') post;
+  @Output('likedEvent') likedEvent = new EventEmitter();
+  liked = false;
+
+  likePost(post) {
+    this.liked = true;
+    this.likedEvent.emit(post);
+  }
 }

@@ -30,4 +30,11 @@ export class TimelineComponent implements OnInit {
     this.route.navigate(['/erro']);
   }
 
+  receiveLiked(likedEvent) {
+    if (isDevMode()) {
+      console.log(likedEvent);
+    }
+
+    likedEvent.likes++;
+  }
 }
